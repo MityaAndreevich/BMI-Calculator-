@@ -9,7 +9,6 @@
 import UIKit
 
 struct CalculatorBrain {
-    
     var bmi: BMI?
     
     mutating func getBMIValue() -> String {
