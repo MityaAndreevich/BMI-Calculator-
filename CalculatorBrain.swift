@@ -6,7 +6,6 @@
 //  Copyright © 2021 Angela Yu. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 struct CalculatorBrain {
@@ -16,6 +15,14 @@ struct CalculatorBrain {
     mutating func getBMIValue() -> String {
         let bmiStringValue = String(format: "%.1f", bmi?.value ?? 0.0)
         return bmiStringValue
+    }
+    
+    func getAdvice() -> String {
+        return bmi?.advice ?? "Smth wrong"
+    }
+    
+    func getColor() -> UIColor {
+        return bmi?.color ?? .yellow
     }
     
     mutating func calculateBMI(height: Float, weight: Float) {
@@ -28,15 +35,5 @@ struct CalculatorBrain {
         } else {
             bmi = BMI(value: bmiValue, advice: "Stop eating and run!", color: .red)
         }
-    }
-    
-    func getAdvice() -> String {
-        let advice = bmi?.advice ?? "Smth wrong"
-        return advice
-    }
-    
-    func getColor() -> UIColor {
-        let color = bmi?.color ?? .yellow
-        return color
     }
 }
